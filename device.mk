@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # Device path
-DEVICE_PATH := device/motorola/guamna/rootdir
+DEVICE_PATH := device/motorola/caprip/rootdir
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/guamna/overlay
+    device/motorola/caprip/overlay
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES := \
@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES := \
 
 # Kernel
 PRODUCT_COPY_FILES += \
-    device/motorola/guamna-kernel/Image.gz-dtb:kernel
+    device/motorola/sm4250-common-kernel/bengal-moto-Image.gz-dtb:kernel
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \
@@ -35,9 +35,12 @@ PRODUCT_COPY_FILES += \
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.guamna \
-    ramdisk-fstab.guamna \
+    fstab.caprip \
+    vendor-fstab.caprip \
     init.recovery.qcom.rc
+
+# AB Partitions
+AB_OTA_PARTITIONS += vendor_boot
 
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
@@ -55,4 +58,4 @@ PRODUCT_PROPERTY_OVERRIDES := \
 $(call inherit-product, device/motorola/sm4250-common/platform.mk)
 
 # include board vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/guamna/guamna-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/caprip/caprip-vendor.mk)

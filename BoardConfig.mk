@@ -12,32 +12,36 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Boot Header
+BOARD_BOOT_HEADER_VERSION := 3
+
+# PlatformConfig
 include device/motorola/sm4250-common/PlatformConfig.mk
 
 # Kernel cmdline
 BOARD_KERNEL_CMDLINE += \
     androidboot.hab.csv=5 \
-    androidboot.hab.product=guamna \
+    androidboot.hab.product=caprip \
     androidboot.hab.cid=50
 
-TARGET_BOOTLOADER_BOARD_NAME := guamna
+TARGET_BOOTLOADER_BOARD_NAME := caprip
 
 # Platform
 PRODUCT_PLATFORM := bengal
 
 # Kernel DTB/DTBO
-BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/guamna-kernel
-BOARD_PREBUILT_DTBOIMAGE := device/motorola/guamna-kernel/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/sm4250-common-kernel/dtb
+BOARD_PREBUILT_DTBOIMAGE := device/motorola/sm4250-common-kernel/dtbo.img
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES := \
-    $(wildcard device/motorola/guamna-kernel/modules/*.ko)
+    $(wildcard device/motorola/sm4250-common-kernel/modules/*.ko)
 
 # Partition information
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824 # (0x1800000)
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
 
 BOARD_SUPER_PARTITION_SIZE := 10837032960
 BOARD_SUPER_PARTITION_GROUPS := mot_dynamic_partitions
@@ -62,5 +66,5 @@ BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 52428800
 # Reserve space for data encryption (239541551104-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 14919106048
 
-# DTB
-BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/guamna-kernel
+# This target has no recovery partition
+BOARD_USES_RECOVERY_AS_BOOT := true
