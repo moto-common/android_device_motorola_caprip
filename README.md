@@ -1,7 +1,17 @@
-Copyright (C) Sony Mobile Communications 2020
-=============================================
+Bengal platform
+============
 
-This is the Android device configuration for Xperia 1 II (edo platform).
+## Copyrights
+Copyright (C) LineageOS Modded Project/Electimon 2022
 
-Build instructions
-https://developer.sony.com/develop/open-devices/guides/aosp-build-instructions/
+Copyright (C) Sony Mobile Communications 2019
+
+## Device Tree
+
+Android device configuration for the bengal platform (**SM6115**).
+
+### Supported devices
+
+| Device | Codename |
+|-|:-:|
+| Moto G Play (2021) | caprip |
