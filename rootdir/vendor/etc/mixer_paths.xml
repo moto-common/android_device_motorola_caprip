@@ -58,6 +58,12 @@
     <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia14" value="0" />
     <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="PRI_MI2S_RX Port Mixer SLIM_8_TX" value="0" />
+    <ctl name="USB_AUDIO_RX Port Mixer SLIM_8_TX" value="0" />
+    <ctl name="SLIMBUS_7_RX Port Mixer SLIM_8_TX" value="0" />
+    <ctl name="PRI_MI2S_RX_DL_HL Switch" value="0" />
+    <ctl name="USB_DL_HL Switch" value="0" />
+    <ctl name="SLIMBUS7_DL_HL Switch" value="0" />
     <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia5 Mixer TX_CDC_DMA_TX_3" value="0" />
     <ctl name="MultiMedia5 Mixer TX_CDC_DMA_TX_4" value="0" />
@@ -462,7 +468,7 @@
 
     <path name="echo-reference headphones">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="echo-reference headset">
@@ -471,22 +477,22 @@
 
     <path name="echo-reference headphones-44.1">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="echo-reference usb-headset">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="USB_AUDIO_RX" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="echo-reference usb-headphones">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="USB_AUDIO_RX" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="echo-reference bt-sco">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_7_RX" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="echo-reference bt-sco-wb">
@@ -514,15 +520,15 @@
 
     <path name="echo-reference-voip headphones">
         <ctl name="AUDIO_REF_EC_UL10 MUX" value="RX_CDC_DMA_RX_0" />
-        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="EC Reference Channels" value="Two"/>
     </path>
 
     <path name="deep-buffer-playback">
-	<ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia1" value="1" />
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback speaker">
-	    <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback handset">
@@ -579,11 +585,6 @@
     <path name="deep-buffer-playback speaker-and-usb-headphones">
         <path name="deep-buffer-playback usb-headphones" />
         <path name="deep-buffer-playback speaker" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-usb-headset">
-       <path name="deep-buffer-playback speaker" />
-       <path name="deep-buffer-playback usb-headset" />
     </path>
 
     <path name="deep-buffer-playback speaker-safe-and-usb-headphones">
@@ -701,11 +702,6 @@
     <path name="low-latency-playback speaker-and-usb-headphones">
         <path name="low-latency-playback usb-headphones" />
         <path name="low-latency-playback speaker" />
-    </path>
-
-    <path name="low-latency-playback speaker-and-usb-headset">
-       <path name="low-latency-playback speaker" />
-       <path name="low-latency-playback usb-headset" />
     </path>
 
     <path name="low-latency-playback speaker-safe-and-usb-headphones">
@@ -945,11 +941,6 @@
     <path name="compress-offload-playback speaker-and-usb-headphones">
         <path name="compress-offload-playback usb-headphones" />
         <path name="compress-offload-playback speaker" />
-    </path>
-
-    <path name="compress-offload-playback speaker-and-usb-headset">
-       <path name="compress-offload-playback speaker" />
-       <path name="compress-offload-playback usb-headset" />
     </path>
 
     <path name="compress-offload-playback speaker-safe-and-usb-headphones">
@@ -2056,14 +2047,32 @@
 
     <path name="play-fm">
         <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
-        <ctl name="RX_CDC_DMA_RX_1 Port Mixer SLIM_8_TX" value="1" />
-        <ctl name="RX_CDC_DMA_RX_1_DL_HL Switch" value="1" />
+        <ctl name="RX_CDC_DMA_RX_0 Port Mixer SLIM_8_TX" value="1" />
+        <ctl name="RX_CDC_DMA_RX_0_DL_HL Switch" value="1" />
+    </path>
+
+    <path name="play-fm speaker">
+        <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
+        <ctl name="PRI_MI2S_RX Port Mixer SLIM_8_TX" value="1" />
+        <ctl name="PRI_MI2S_RX_DL_HL Switch" value="1" />
     </path>
 
     <path name="play-fm headphones">
         <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
         <ctl name="RX_CDC_DMA_RX_0 Port Mixer SLIM_8_TX" value="1" />
         <ctl name="RX_CDC_DMA_RX_0_DL_HL Switch" value="1" />
+    </path>
+
+    <path name="play-fm usb-headset">
+        <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
+        <ctl name="USB_AUDIO_RX Port Mixer SLIM_8_TX" value="1" />
+        <ctl name="USB_DL_HL Switch" value="1" />
+    </path>
+
+    <path name="play-fm bt-a2dp">
+        <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
+        <ctl name="SLIMBUS_7_RX Port Mixer SLIM_8_TX" value="1" />
+        <ctl name="SLIMBUS7_DL_HL Switch" value="1" />
     </path>
 
     <path name="play-fm headset">
@@ -2218,16 +2227,16 @@
 
     <!-- incall music playback -->
     <path name="incall-music-uplink">
-	<ctl name="Incall_Music Audio Mixer MultiMedia9" value="1" />
-	<ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
+        <ctl name="Incall_Music Audio Mixer MultiMedia9" value="1" />
+        <ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
     </path>
 
     <path name="incall-music-uplink bt-sco">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink bt-sco-wb">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink afe-proxy">
@@ -2235,31 +2244,31 @@
     </path>
 
     <path name="incall-music-uplink usb-headphones">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink usb-headset">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink speaker-and-usb-headphones">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink headphones">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink speaker-and-headphones">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink speaker-and-bt-sco">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
 
     <path name="incall-music-uplink speaker-and-bt-sco-wb">
-	<path name="incall-music-uplink" />
+        <path name="incall-music-uplink" />
     </path>
     <!-- incall music playback end -->
 
@@ -2390,14 +2399,6 @@
         <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call speaker-and-usb-headphones">
-        <path name="voicemmode1-call usb-headphones" />
-    </path>
-
-    <path name="voicemmode1-call speaker-and-usb-headset">
-        <path name="voicemmode1-call usb-headset" />
-    </path>
-
     <path name="voicemmode1-call display-port-and-usb-headset-mic">
         <ctl name="DISPLAY_PORT_RX_Voice Mixer VoiceMMode1" value="1" />
         <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="1" />
@@ -2460,14 +2461,6 @@
     <path name="voicemmode2-call usb-headset">
         <ctl name="USB_AUDIO_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="1" />
-    </path>
-
-    <path name="voicemmode2-call speaker-and-usb-headphones">
-        <path name="voicemmode2-call usb-headphones" />
-    </path>
-
-    <path name="voicemmode2-call speaker-and-usb-headset">
-        <path name="voicemmode2-call usb-headset" />
     </path>
 
     <path name="voicemmode2-call display-port-and-usb-headset-mic">
@@ -2552,6 +2545,7 @@
     <path name="audio-record-voip headset-mic">
         <ctl name="MultiMedia10 Mixer TX_CDC_DMA_TX_4" value="1" />
     </path>
+
     <path name="audio-record-voip usb-headset-mic">
         <ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="1" />
     </path>
@@ -2756,6 +2750,7 @@
     <path name="mmap-playback headset">
         <path name="mmap-playback headphones" />
     </path>
+
     <path name="mmap-playback speaker-and-headphones">
         <path name="mmap-playback speaker" />
         <path name="mmap-playback headphones" />
@@ -2830,15 +2825,15 @@
     </path>
 
     <path name="mmap-record">
-      <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_3" value="1" />
+        <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_3" value="1" />
     </path>
 
     <path name="mmap-record headset-mic">
-      <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_4" value="1" />
+        <ctl name="MultiMedia16 Mixer TX_CDC_DMA_TX_4" value="1" />
     </path>
 
     <path name="mmap-record bt-sco">
-      <!-- ctl name="MultiMedia16 Mixer SLIM_7_TX" value="1" / -->
+        <!-- ctl name="MultiMedia16 Mixer SLIM_7_TX" value="1" / -->
     </path>
 
     <path name="mmap-record bt-sco-wb">
@@ -2851,7 +2846,7 @@
     </path>
 
     <path name="mmap-record capture-fm">
-      <!-- ctl name="MultiMedia16 Mixer SLIM_8_TX" value="1" / -->
+        <!-- ctl name="MultiMedia16 Mixer SLIM_8_TX" value="1" / -->
     </path>
 
     <path name="mmap-record usb-headset-mic">
@@ -2953,6 +2948,7 @@
     <path name="incall_music_uplink headset">
         <path name="incall_music_uplink" />
     </path>
+
     <path name="incall_music_uplink speaker-and-headphones">
         <path name="incall_music_uplink" />
     </path>
@@ -2985,8 +2981,7 @@
         <path name="incall_music_uplink" />
     </path>
 
-   <path name="spkr-rx-calib">
-        <ctl name="WSA_CDC_DMA_RX_0_DL_HL Switch"  value="1" />
+    <path name="spkr-rx-calib">
     </path>
 
     <path name="spkr-vi-record">
@@ -3049,15 +3044,26 @@
     <path name="speaker-safe">
     </path>
 
+   <path name="sidetone-iir">
+        <ctl name="IIR0 Enable Band1" value="1" />
+        <ctl name="IIR0 Enable Band2" value="1" />
+        <ctl name="IIR0 Enable Band3" value="1" />
+        <ctl name="IIR0 Enable Band4" value="1" />
+        <ctl name="IIR0 Enable Band5" value="1" />
+    </path>
+
     <path name="sidetone-headphones">
     </path>
 
     <path name="sidetone-handset">
-        <ctl name="Voice Sidetone Enable" value="1" />
+        <path name="sidetone-iir" />
+        <ctl name="IIR0 INP0 Volume" value="54" />
+        <ctl name="IIR0 INP0 MUX" value="DEC2" />
+        <ctl name="RX INT0 MIX2 INP" value="SRC0" />
     </path>
 
-    <path name="sidetone-hac-handset">
-        <path name="sidetone-handset" />
+    <path name="afe-sidetone">
+        <ctl name="Voice Sidetone Enable" value="1" />
     </path>
 
     <path name="speaker-mic">
@@ -3105,26 +3111,21 @@
     </path>
 
     <path name="handset-mic">
-        <path name="amic1" />
-        <ctl name="ADC1 Volume" value="8" />
-    </path>
-
-    <path name="handset-mic-top">
         <path name="amic3" />
     </path>
 
     <path name="headphones">
-	<ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
-	<ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
-	<ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
-	<ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
-	<ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
-	<ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
-	<ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
-	<ctl name="HPHL_RDAC Switch" value="1" />
-	<ctl name="HPHR_RDAC Switch" value="1" />
-	<ctl name="HPHL Volume" value="16" />
-	<ctl name="HPHR Volume" value="16" />
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+        <ctl name="HPHL Volume" value="16" />
+        <ctl name="HPHR Volume" value="16" />
     </path>
 
     <path name="headphones-44.1">
@@ -3162,7 +3163,6 @@
 
     <path name="external-mic">
         <path name="amic2" />
-        <ctl name="ADC2 Volume" value="8" />
     </path>
 
     <path name="voice-handset">
@@ -3183,7 +3183,7 @@
 
     <path name="voice-speaker-stereo">
         <path name="speaker" />
-	<ctl name="aw882xx_fade_dealyed_time" value="100" />
+        <ctl name="aw882xx_fade_dealyed_time" value="100" />
     </path>
 
     <path name="voice-speaker-2">
@@ -3212,8 +3212,6 @@
         <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="HPHL_RDAC Switch" value="1" />
         <ctl name="HPHR_RDAC Switch" value="1" />
-	<ctl name="HPHL Volume" value="16" />
-	<ctl name="HPHR Volume" value="16" />
     </path>
 
     <path name="voice-line">
@@ -3285,12 +3283,11 @@
     </path>
 
     <path name="voice-rec-mic">
-        <path name="speaker-mic" />
+        <path name="handset-mic" />
     </path>
 
     <path name="camcorder-mic">
-        <path name="speaker-mic" />
-        <ctl name="ADC2 Volume" value="8" />
+        <path name="handset-mic" />
     </path>
 
     <path name="bt-sco-headset">
@@ -3345,7 +3342,7 @@
     </path>
 
     <path name="camcorder-mic-bf">
-	<ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
         <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
         <ctl name="TX DEC1 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX1" value="SWR_MIC4" />
@@ -3355,12 +3352,10 @@
         <ctl name="TX DEC2 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX2" value="SWR_MIC0" />
         <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
     </path>
 
     <path name="camcorder-mic-bf-reverse">
-	<ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
         <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
         <ctl name="TX DEC1 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX1" value="SWR_MIC0" />
@@ -3370,14 +3365,10 @@
         <ctl name="TX SMIC MUX2" value="SWR_MIC4" />
         <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC2_MIXER Switch" value="1" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
     </path>
 
     <path name="dmic-endfire">
         <path name="handset-dmic-endfire" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
         <ctl name="IIR0 INP0 MUX" value="DEC2" />
     </path>
 
@@ -3390,13 +3381,11 @@
     </path>
 
     <path name="voice-dmic-ef-tmus">
-        <path name="handset-dmic-endfire" />
-        <ctl name="IIR0 INP0 MUX" value="DEC2" />
+        <path name="dmic-endfire" />
     </path>
 
     <path name="voice-dmic-ef">
-        <path name="handset-dmic-endfire" />
-        <ctl name="IIR0 INP0 MUX" value="DEC2" />
+        <path name="dmic-endfire" />
     </path>
 
     <path name="voice-speaker-dmic-ef">
@@ -3478,8 +3467,8 @@
     </path>
 
     <path name="voice-tty-hco-handset">
-	<ctl name="TTY Mode" value="HCO" />
-	<path name="voice-handset" />
+        <ctl name="TTY Mode" value="HCO" />
+        <path name="voice-handset" />
     </path>
 
     <path name="voice-tty-full-headset-mic">
