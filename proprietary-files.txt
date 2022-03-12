@@ -160,7 +160,7 @@ vendor/lib/libvidhance_face_stabilizer.so
 vendor/lib/libvidhance_fbc.so
 vendor/lib/libvidhance_horizon_correction.so
 vendor/lib/libvidhance_stabilizer.so
-vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|23fd3c3803e104b41602c7c958c1128ac64e2110
 vendor/lib64/camera/components/com.arcsoft.node.dc_capture.so
 vendor/lib64/camera/components/com.arcsoft.node.dc_preview.so
 vendor/lib64/camera/components/com.arcsoft.node.smooth_transition.so
@@ -311,7 +311,7 @@ vendor/lib64/libvidhance_face_stabilizer.so
 vendor/lib64/libvidhance_fbc.so
 vendor/lib64/libvidhance_horizon_correction.so
 vendor/lib64/libvidhance_stabilizer.so
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|9877c2850370076a8c63a5e4d1c5e278d98734b5
 
 # Camera configs
 vendor/etc/camera/aec_golden_depth.bin
