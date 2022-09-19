@@ -1,3 +1,5 @@
+# These files are from S0RCS32.41-10-19-3 unless specified otherwise
+
 # Audio ACDB
 vendor/etc/acdbdata/nn_ns_models/fai__2.0.0_0.1__3.0.0_0.0__eai_1.00.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.2.0_0.1__3.0.0_0.0__eai_1.00.pmd
@@ -323,6 +325,23 @@ vendor/etc/camera/dual_golden_depth.bin
 vendor/etc/camera/dual_golden_ov8856_wide.bin
 vendor/etc/camera/dual_golden_wide.bin
 vendor/etc/camera/vidhance_calibration
+
+# Firmware
+vendor/firmware/aw869x_haptic.bin
+vendor/firmware/aw882xx_mono.bin
+vendor/firmware/aw882xx_spk_reg.bin
+vendor/firmware/djn1_nt36525c_novatek_ts_fw.bin
+vendor/firmware/djn1_nt36525c_novatek_ts_mp.bin
+vendor/firmware/ILITEK_FW_TIANMA_9882N
+vendor/firmware/ILITEK_FW_TXD_9882N
+
+# Firmware - from capri RRBS31.Q1-3-48-13
+vendor/firmware/aw882xx_mono_power.bin|35b42f3443237927cfb259c06bd310723009e386
+vendor/firmware/djn_novatek_ts_fw.bin|b6e6ffbfd9d99e146be4c92af43c5fc714d9a820
+vendor/firmware/djn_novatek_ts_mp.bin|4a6965b8571c38056c5a37220493f745cd45714b
+vendor/firmware/ILITEK_FW_TM_9882N|fef3caba46f4c5adfde8ab04aa76d19503c045e4
+vendor/firmware/ILITEK_FW_TXD_7806S|5c6cc0f8b3d132b8e73a77cef79c383afffb17ee
+vendor/firmware/ILITEK_FW_TXD_9882H|005e2b584aaf7c09f64368068c5531a020a0ce13
 
 # Media
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
