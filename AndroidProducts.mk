@@ -12,12 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/aosp_caprip.mk \
-     $(LOCAL_DIR)/lineage_caprip.mk
-
-COMMON_LUNCH_CHOICES += \
-    aosp_caprip-eng \
-    aosp_caprip-userdebug \
-    lineage_caprip-eng \
-    lineage_caprip-userdebug
+PRODUCT_MAKEFILES := $(wildcard device/motorola/targets/devices/caprip/*.mk)
