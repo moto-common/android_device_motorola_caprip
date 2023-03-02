@@ -15,12 +15,6 @@
 # Device path
 DEVICE_PATH := device/motorola/caprip/rootdir
 
-ifeq ($(TARGET_BUILDS_AOSP),true)
-# Kernel
-PRODUCT_COPY_FILES += \
-    device/motorola/sm4250-common-kernel/bengal-moto-guamc-Image.gz:kernel
-endif
-
 # Audio Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
