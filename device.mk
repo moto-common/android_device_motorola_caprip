@@ -15,9 +15,6 @@
 # Device path
 DEVICE_PATH := device/motorola/caprip/rootdir
 
-DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/caprip/overlay
-
 ifeq ($(TARGET_BUILDS_AOSP),true)
 # Kernel
 PRODUCT_COPY_FILES += \
