@@ -15,6 +15,17 @@
 # Device path
 DEVICE_PATH := device/motorola/caprip/rootdir
 
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.sf.lcd_density=280
+
+# AB Partitions
+AB_OTA_PARTITIONS += vendor_boot
+
 # Audio Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
@@ -25,16 +36,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom.vendor_ramdisk \
     fstab.qcom
-
-# AB Partitions
-AB_OTA_PARTITIONS += vendor_boot
-
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.sf.lcd_density=280
 
 # Fingerprint
 TARGET_USES_CHIPONE_FINGERPRINT := true
