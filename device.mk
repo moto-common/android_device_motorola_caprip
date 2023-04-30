@@ -26,12 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # AB Partitions
 AB_OTA_PARTITIONS += vendor_boot
 
-# Audio Configuration
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(DEVICE_PATH)/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(DEVICE_PATH)/vendor/etc/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
-
 # Device Init
 PRODUCT_PACKAGES += \
     fstab.qcom.vendor_ramdisk \
