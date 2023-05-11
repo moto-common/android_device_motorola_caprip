@@ -24,16 +24,23 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=280
 
 # AB Partitions
-AB_OTA_PARTITIONS += vendor_boot
+AB_OTA_PARTITIONS += \
+    system_ext \
+    vendor_boot
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.qcom.vendor_ramdisk \
-    fstab.qcom
+    fstab_system_ext.qcom.vendor_ramdisk
+
+# Device Model
+PRODUCT_MODEL := moto g(30)
 
 # Fingerprint
 TARGET_USES_CHIPONE_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
+
+# Model
+PRODUCT_MODEL := moto g(30)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sm4250-common/platform.mk)
