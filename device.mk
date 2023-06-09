@@ -39,9 +39,6 @@ PRODUCT_MODEL := moto g(30)
 TARGET_USES_CHIPONE_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
 
-# Model
-PRODUCT_MODEL := moto g(30)
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/sm4250-common/platform.mk)
 
