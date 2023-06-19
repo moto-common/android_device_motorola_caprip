@@ -28,6 +28,9 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vendor_boot
 
+# Device characteristics
+DEVICE_CHARACTERISTICS := hfr
+
 # Device Model
 PRODUCT_MODEL := moto g(30)
 
