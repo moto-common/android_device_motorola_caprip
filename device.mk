@@ -28,10 +28,6 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vendor_boot
 
-# Device Init
-PRODUCT_PACKAGES += \
-    fstab_system_ext.qcom.vendor_ramdisk
-
 # Device Model
 PRODUCT_MODEL := moto g(30)
 
